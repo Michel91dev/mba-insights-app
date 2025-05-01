@@ -3,6 +3,10 @@
 ## Description
 Application d'analyse interactive des MBA mondiaux permettant d'explorer les classements, les motivations des candidats, les tendances mondiales et de simuler des scores de classement.
 
+L'application est disponible en deux versions :
+- **Version Desktop** : Interface graphique avec Tkinter
+- **Version Web** : Application web avec Streamlit pour un partage facilité
+
 ## Fonctionnalités
 - Visualisation du classement Financial Times et de sa méthodologie
 - Analyse des motivations des candidats MBA
@@ -29,14 +33,31 @@ source .venv/bin/activate
 
 ### 3. Installer les dépendances
 ```bash
-pip install -e .
+pip install -r requirements.txt
 ```
 
 ## Utilisation
-Exécutez l'application avec la commande suivante :
+
+### Version Desktop
 ```bash
 python mba_insights_app.py
 ```
+
+### Version Web
+```bash
+streamlit run mba_insights_web.py
+```
+
+## Déploiement Web
+L'application web peut être facilement déployée sur Streamlit Cloud :
+
+1. Créez un compte sur [Streamlit Cloud](https://streamlit.io/cloud)
+2. Connectez votre compte GitHub
+3. Sélectionnez ce dépôt et le fichier `mba_insights_web.py`
+4. Votre application sera automatiquement déployée et accessible publiquement
+
+## Auteur
+Michel S.
 
 ## Structure du projet
 ```
