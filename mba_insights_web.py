@@ -229,7 +229,7 @@ def afficher_pied_de_page() -> None:
     """Affiche le pied de page de l'application."""
     st.markdown("""
     <div class="footer">
-        © 2025 MBA Global Insights - Développé avec Python & Streamlit
+        © 2025 Michel S. - Développé avec Python & Streamlit
     </div>
     """, unsafe_allow_html=True)
 
