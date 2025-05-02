@@ -290,28 +290,30 @@ def traduire(cle: str) -> str:
         return translations[langue][cle]
     return cle  # Retourne la clé si aucune traduction n'est trouvée
 
-def image_drapeau(code_pays: str) -> str:
-    """Génère une image en base64 du drapeau pour l'affichage dans Streamlit."""
-    if code_pays == 'fr':
-        # Drapeau français
-        return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAYAAAB24g05AAAABmJLR0QA/wD/AP+gvaeTAAAAPElEQVQokWNgGAXEAEYGBob/FBj0H10TIwMDwwlSDQAZgmIIKS6gKQATiBKEJkm0AcRGI9EGoAcn9QAAoBQJ/wWt7D0AAAAASUVORK5CYII="
-    else:
-        # Drapeau anglais
-        return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAYAAAB24g05AAAABmJLR0QA/wD/AP+gvaeTAAAApElEQVQokcWQsQrCQBBEZ79ASBG0URtB8H9S28XGzsbKxsLCX0gC32UdmBDk9BK0cJrdu7c7bEgA4IgORZyQCeV1y0rDlS2vJkhcOJCjB/uVs3J7NltRBjNgEtFLWYE5MAOsAF9IKXXgR1BAU4I/GMOyuCWoA2YxCmyBfdxlHVgCU8k3yTtGI8ldnQQkh4hOJUfJZ8lB9jP2MzBBZB/R/Qdo4feDG1iWOvKxkn5wAAAAAElFTkSuQmCC"
-
 def selecteur_langue() -> None:
-    """Affiche un sélecteur de langue avec des drapeaux."""
-    col1, col2, col3 = st.columns([0.89, 0.055, 0.055])
+    """Affiche un sélecteur de langue avec des boutons texte."""
+    # Créer une ligne avec 3 colonnes, une grande pour l'espacement et deux pour les boutons
+    col1, col2, col3 = st.columns([0.8, 0.1, 0.1])
+    
+    # Style pour afficher le bouton actif avec une couleur de fond
+    style_actif = "background-color: #1a5276; color: white; font-weight: bold;"
+    style_inactif = "background-color: #f0f0f0; color: black;"
+    
+    # Déterminer quel bouton est actif en fonction de la langue sélectionnée
+    style_fr = style_actif if st.session_state.langue == 'fr' else style_inactif
+    style_en = style_actif if st.session_state.langue == 'en' else style_inactif
     
     with col2:
-        fr_img = image_drapeau('fr')
-        if st.image(fr_img, width=30, output_format="AUTO"):
+        # Bouton pour la langue française
+        if st.button("FR", key="fr_button", help="Passer en français", use_container_width=True):
             st.session_state.langue = 'fr'
+            st.rerun()
     
     with col3:
-        en_img = image_drapeau('en')
-        if st.image(en_img, width=30, output_format="AUTO"):
+        # Bouton pour la langue anglaise
+        if st.button("EN", key="en_button", help="Switch to English", use_container_width=True):
             st.session_state.langue = 'en'
+            st.rerun()
 
 # -----------------------------------------------------------------------------
 # Interface principale
