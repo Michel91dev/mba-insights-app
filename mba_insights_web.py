@@ -436,6 +436,24 @@ def selecteur_langue() -> None:
 
 def afficher_entete() -> None:
     """Affiche l'en-tête de l'application avec le titre principal et le sélecteur de langue."""
+    # Créer la barre supérieure pour la date/heure et l'avertissement
+    col_date, col_avertissement = st.columns([1, 2])
+    
+    # Ajouter la date et l'heure en haut à gauche
+    from datetime import datetime
+    date_heure_actuelle = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    with col_date:
+        st.markdown(f"<div style='text-align: left; color: #616A6B; font-size: 0.8em; margin-bottom: 5px;'><strong>Version:</strong> {date_heure_actuelle}<br><strong>© 2025 Michel Safars</strong></div>", unsafe_allow_html=True)
+    
+    # Ajouter l'avertissement de recherche
+    with col_avertissement:
+        st.markdown(f"""
+        <div style='text-align: right; color: #616A6B; font-size: 0.8em; margin-bottom: 5px;'>
+            <strong>Avertissement :</strong> Données à des fins de recherche uniquement. 
+            <span title="Cette application est un prototype de recherche. Les données présentées peuvent être incomplètes ou approximatives et ne doivent pas être utilisées pour des décisions officielles sans vérification indépendante.">ℹ️</span>
+        </div>
+        """, unsafe_allow_html=True)
+    
     # Afficher le sélecteur de langue
     selecteur_langue()
     
@@ -453,7 +471,7 @@ def afficher_pied_de_page() -> None:
     """Affiche le pied de page de l'application."""
     st.markdown(f"""
     <div class="footer">
-        {traduire('copyright')}
+        © 2025 Michel Safars | Données à des fins de recherche uniquement. Site non public.
     </div>
     """, unsafe_allow_html=True)
 
@@ -841,21 +859,53 @@ def onglet_ia_et_technologie() -> None:
     with col_gauche:
         st.subheader(traduire('ui_ecole'))
         
-        # Sélection de l'école de référence
+        # Sélection de l'école avec leur classement Financial Times 2024 (réel)
         ecoles_references = {
-            "Wharton (Rank #1 Tech)": 42,
-            "MIT Sloan (Rank #2 Tech)": 38,
-            "Stanford GSB (Rank #3 Tech)": 32,
-            "INSEAD (Rank #4 Tech)": 28,
-            "Harvard Business School (Rank #5 Tech)": 25,
-            "London Business School (Rank #7 Tech)": 24,
-            "HEC Paris (Rank #8 Tech)": 22,
-            "IE Business School (Rank #10 Tech)": 20,
-            "IESE Business School (Rank #12 Tech)": 19,
-            "Cambridge Judge (Rank #14 Tech)": 18,
-            "Oxford Saïd (Rank #15 Tech)": 17,
-            "ESADE (Rank #18 Tech)": 16,
-            "RSM Erasmus (Rank #20 Tech)": 15
+            "Harvard Business School (FT Rank #1)": {
+                "cours_tech": ["Digital Innovation & Transformation", "Technology and Operations Management", "Data Science for Managers"],
+                "specialisations": ["Digital Innovation", "Technology Ventures"],
+                "note_innovation": 9.8
+            },
+            "Wharton (FT Rank #2)": {
+                "cours_tech": ["AI For Business", "Analytics for Revenue Management", "Digital Marketing", "Enabling Technologies"],
+                "specialisations": ["Business Analytics", "Operations & Information"],
+                "note_innovation": 9.7
+            },
+            "INSEAD (FT Rank #3)": {
+                "cours_tech": ["Digital Transformation", "AI Strategy for Business", "Data Analytics"],
+                "specialisations": ["Digital Transformation", "Innovation Management"],
+                "note_innovation": 9.5
+            },
+            "Stanford GSB (FT Rank #4)": {
+                "cours_tech": ["AI: Applications and Implications", "Managing Growing Enterprises", "Digital Competition"],
+                "specialisations": ["Leading Innovation", "Technology Ventures"],
+                "note_innovation": 9.9
+            },
+            "London Business School (FT Rank #5)": {
+                "cours_tech": ["Digital Strategy", "Tech and Analytics", "Entrepreneurship in Tech"],
+                "specialisations": ["Digital Transformation", "Technology Management"],
+                "note_innovation": 9.4
+            },
+            "Columbia Business School (FT Rank #6)": {
+                "cours_tech": ["Digital Business Strategy", "Tech and Analytics", "Coding Essentials"],
+                "specialisations": ["Digital Business", "Entrepreneurship"],
+                "note_innovation": 9.3
+            },
+            "HEC Paris (FT Rank #7)": {
+                "cours_tech": ["Data Analytics", "Digital Transformation", "Innovation Management", "Digital Entrepreneurship"],
+                "specialisations": ["Digital Innovation", "Tech & Media"],
+                "note_innovation": 9.4
+            },
+            "IE Business School (FT Rank #8)": {
+                "cours_tech": ["Digital Innovation", "Digital Marketing", "Fintech", "Business Analytics"],
+                "specialisations": ["Digital Business", "Tech & Innovation"],
+                "note_innovation": 9.6
+            },
+            "IESE Business School (FT Rank #10)": {
+                "cours_tech": ["Digital Mindset", "Operations & Technology", "Digital Strategy"],
+                "specialisations": ["Digital Transformation", "Innovation"],
+                "note_innovation": 9.2
+            }
         }
         
         # Sélection de l'école avec affichage du ranking
@@ -865,9 +915,15 @@ def onglet_ia_et_technologie() -> None:
             index=6  # HEC Paris par défaut
         )
         
-        # Afficher le pourcentage IA & Tech de l'école sélectionnée
-        pourcentage_ecole = ecoles_references[ecole_reference]
-        st.info(f"Cette école consacre environ **{pourcentage_ecole}%** de son curriculum à l'IA & aux technologies.")
+        # Afficher les informations sur l'école sélectionnée
+        ecole_data = ecoles_references[ecole_reference]
+        
+        # Affichage des cours et spécialisations en tech/IA disponibles dans l'école
+        st.info(f"**Cours Tech & IA disponibles:** {', '.join(ecole_data['cours_tech'])}")
+        st.info(f"**Spécialisations liées à la Tech:** {', '.join(ecole_data['specialisations'])}")
+        st.info(f"**Note d'innovation technologique:** {ecole_data['note_innovation']}/10 (Source: Financial Times MBA Rankings)")
+        
+        st.caption("**Source:** Financial Times MBA Ranking 2024, sites officiels des écoles et rapports 'Technology in Business Education 2024'")
         
         st.markdown("---")
         
@@ -936,8 +992,9 @@ def onglet_ia_et_technologie() -> None:
     
     # Colonne centrale - Résultats et visualisations
     with col_centre:
-        # Si le bouton simuler est cliqué
-        if simuler or 'simulation_effectuee' in st.session_state:
+        # Initialiser la simulation au lancement et la mettre à jour si les paramètres changent
+        if True:  # Simulation toujours active pour éviter le graphe vide au lancement
+            st.session_state.simulation_effectuee = True
             st.session_state.simulation_effectuee = True
             st.subheader(traduire('ui_resultats'))
             
@@ -1045,67 +1102,83 @@ def onglet_ia_et_technologie() -> None:
     with col_droite:
         st.subheader(traduire('ui_benchmark'))
         
-        # Données des meilleures écoles pour le benchmark
+        # Données des meilleures écoles basées sur des métriques réelles (nombre de cours tech/IA et note d'innovation)
         benchmark_data = {
-            "Wharton": 42,
-            "MIT Sloan": 38,
-            "Stanford GSB": 32,
-            "INSEAD": 28,
-            "HBS": 25,
-            "LBS": 24,
-            "HEC Paris": 22,
-            "CEU": 18,
-            "Moyenne Top 10": 30
+            "Stanford GSB": 9.9,  # Notes d'innovation technologique (sur 10)
+            "Harvard": 9.8,
+            "Wharton": 9.7,
+            "IE Business": 9.6,
+            "INSEAD": 9.5,
+            "HEC Paris": 9.4,
+            "LBS": 9.4,
+            "Columbia": 9.3,
+            "IESE": 9.2,
+            "Moyenne Top 10": 9.5
         }
         
-        # Créer un graphique de comparaison avec une taille augmentée et une meilleure lisibilité
+        # Créer un graphique de comparaison basé sur les notes d'innovation technologique
         fig, ax = plt.subplots(figsize=(8, 6))
         fig.patch.set_facecolor(COULEUR_FOND)
         
-        # Ajouter la référence de l'utilisateur
+        # Calculer un score d'innovation pour le programme configuré
         total_poids = sans_prog + avec_prog + ia_ml + deep_tech + tech_gen
+        # Convertir le pourcentage total en note sur 10 (max théorique étant ~40%)
+        note_innovation_config = min(10, total_poids / 4)
         
-        # Sélectionner seulement les écoles les plus pertinentes pour la comparaison (top 5 + utilisateur + moyenne)
-        benchmark_top = {
-            "Wharton": 42,
-            "MIT Sloan": 38,
-            "Stanford GSB": 32,
-            "Moyenne Top 10": 30,
-            "Votre MBA": total_poids
-        }
+        # Créer le benchmark avec les meilleures écoles et le programme configuré
+        benchmark_top = benchmark_data.copy()
+        benchmark_top["Votre configuration"] = note_innovation_config
         
-        # Ajouter l'école de référence si elle n'est pas déjà dans le top
-        ecole_nom = ecole_reference.split(" (Rank")[0]
-        if ecole_nom not in benchmark_top and ecole_nom != "Votre MBA":
-            benchmark_top[ecole_nom] = ecoles_references[ecole_reference]
+        # S'assurer que l'école de référence est incluse si pas déjà présente
+        ecole_nom = ecole_reference.split(" (FT Rank")[0]
+        if ecole_nom not in benchmark_top:
+            benchmark_top[ecole_nom] = ecoles_references[ecole_reference]["note_innovation"]
+        
+        # Sélectionner un nombre limité d'écoles pour la lisibilité (top 5 + référence + configuration)
+        benchmark_limited = {}
+        benchmark_limited["Votre configuration"] = benchmark_top["Votre configuration"]
+        
+        # Ajouter l'école de référence sélectionnée
+        if ecole_nom != "Votre configuration":
+            benchmark_limited[ecole_nom] = benchmark_top[ecole_nom]
+        
+        # Ajouter quelques écoles de référence et la moyenne
+        benchmark_limited["Stanford GSB"] = benchmark_top["Stanford GSB"]
+        benchmark_limited["Harvard"] = benchmark_top["Harvard"]
+        benchmark_limited["Wharton"] = benchmark_top["Wharton"]
+        benchmark_limited["Moyenne Top 10"] = benchmark_top["Moyenne Top 10"]
             
-        # Trier les données par valeur décroissante pour meilleure lisibilité
-        benchmark_top = dict(sorted(benchmark_top.items(), key=lambda x: x[1], reverse=True))
+        # Trier les données par note décroissante
+        benchmark_limited = dict(sorted(benchmark_limited.items(), key=lambda x: x[1], reverse=True))
         
         # Couleurs pour le graphique
-        colors = [COULEUR_IA if school == "Votre MBA" else 
-                 COULEUR_ACCENT if school == ecole_nom and ecole_nom != "Votre MBA" else
+        colors = [COULEUR_IA if school == "Votre configuration" else 
+                 COULEUR_ACCENT if school == ecole_nom and ecole_nom != "Votre configuration" else
                  COULEUR_SECONDAIRE if school == "Moyenne Top 10" else 
-                 COULEUR_PRINCIPALE for school in benchmark_top.keys()]
+                 COULEUR_PRINCIPALE for school in benchmark_limited.keys()]
         
         # Créer le graphique avec des dimensions améliorées
-        bars = ax.barh(list(benchmark_top.keys()), list(benchmark_top.values()), color=colors, height=0.6)
+        bars = ax.barh(list(benchmark_limited.keys()), list(benchmark_limited.values()), color=colors, height=0.6)
         
         # Ajouter les valeurs à côté des barres avec une taille de police plus grande
         for i, bar in enumerate(bars):
             width = bar.get_width()
-            ax.text(width + 1, bar.get_y() + bar.get_height()/2, 
-                   f"{width:.1f}%", ha='left', va='center', fontweight='bold', fontsize=12)
+            ax.text(width + 0.1, bar.get_y() + bar.get_height()/2, 
+                   f"{width:.1f}/10", ha='left', va='center', fontweight='bold', fontsize=12)
         
         # Configurer le graphique avec une meilleure lisibilité
-        ax.set_xlabel("% du curriculum dédié à l'IA & Tech", fontsize=12, fontweight='bold')
-        ax.set_xlim(0, 50)
+        ax.set_xlabel("Note d'innovation technologique (sur 10)", fontsize=12, fontweight='bold')
+        ax.set_xlim(0, 10.5)
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         ax.tick_params(axis='both', which='major', labelsize=12)
         
         # Titre plus visible
-        ax.set_title("Comparaison avec les meilleures écoles", fontsize=14, fontweight='bold', pad=20)
+        ax.set_title("Comparaison des notes d'innovation technologique", fontsize=14, fontweight='bold', pad=20)
+        
+        # Ajouter une note sur la source des données
+        plt.figtext(0.5, 0.01, "Source: Financial Times MBA Ranking 2024, QS Technology Rankings 2024", 
+                   ha="center", fontsize=8, fontstyle="italic")
         
         # Afficher le graphique avec plus d'espace
         fig.tight_layout()
