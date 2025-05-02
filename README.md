@@ -76,4 +76,4 @@ Ce projet suit les règles de développement définies dans le document "Règles
 - Vérification statique avec MyPy
 
 ## Licence
-© 2025 MBA Global Insights - Tous droits réservés
+© 2025 Michel Safars ©
