@@ -22,6 +22,7 @@ COULEUR_PRINCIPALE = "#1a5276"    # Bleu foncé professionnel
 COULEUR_SECONDAIRE = "#2980b9"    # Bleu plus clair
 COULEUR_ACCENT = "#f39c12"        # Orange pour l'accent
 COULEUR_TECHNO = "#27ae60"        # Vert pour la technologie
+COULEUR_IA = "#c0392b"           # Rouge pour l'IA et nouveaux éléments
 COULEUR_FOND = "#f0f0f0"          # Fond gris clair
 
 # Configuration pour la traduction
@@ -235,7 +236,64 @@ translations = {
         'tab_motivations': "Motivations des Candidats",
         'tab_tendances': "Tendances Mondiales",
         'tab_simulateur': "Simulateur de Classement",
+        'tab_ia_techno': "IA & Technologie",
         'tab_references': "Références & Explications",
+        
+        # IA et Technologie
+        'ia_techno_titre': "Intelligence Artificielle & Technologie dans les MBA",
+        'ia_techno_desc': "Analyse et outil d'aide à la décision pour l'intégration de l'IA et des technologies dans les programmes MBA.",
+        'ia_techno_intro': "Cet outil vous permet d'analyser et de visualiser l'impact des différentes composantes technologiques dans les programmes MBA.",
+        
+        # Catégories IA et Tech
+        'cat_sans_prog': "Sans programmation",
+        'cat_avec_prog': "Avec programmation",
+        'cat_ia_ml': "IA & Machine Learning",
+        'cat_deep_tech': "Deep Tech",
+        'cat_techno_gen': "Technologies générales",
+        
+        # Types de cours
+        'cours_common': "Cours obligatoires",
+        'cours_electifs': "Cours électifs",
+        'cours_projets': "Projets et ateliers",
+        
+        # Descriptions des catégories
+        'desc_sans_prog': "Cours d'initiation à la tech et l'IA sans exigence de programmation (sensibilisation, concepts, stratégie).",
+        'desc_avec_prog': "Cours incluant des éléments de code, algorithmes ou programmation de base (Python, R, SQL).",
+        'desc_ia_ml': "Cours spécialisés en intelligence artificielle, machine learning et applications métier de l'IA.",
+        'desc_deep_tech': "Cours avancés sur les technologies émergentes (blockchain, IoT, robotique, VR/AR).",
+        'desc_techno_gen': "Technologies générales appliquées au business (transformation digitale, e-commerce, etc.).",
+        
+        # Interface utilisateur pour l'outil d'analyse
+        'ui_ecole': "École de référence",
+        'ui_simuler': "Simuler l'impact",
+        'ui_resultats': "Résultats de la simulation",
+        'ui_benchmark': "Comparaison avec les meilleures écoles",
+        'ui_recommandations': "Recommandations personnalisées",
+        'ui_dosage': "Dosage recommandé (% du programme)",
+        'ui_impact': "Impact sur la valorisation du MBA",
+        
+        # Motivations des candidats - textes pour l'onglet en français
+        'motivations_titre': "Principales Motivations des Candidats MBA",
+        'motivations_intro': "Découvrez pourquoi les étudiants du monde entier choisissent de poursuivre un MBA. Les données montrent que les motivations varient mais se concentrent autour de quelques thèmes clés.",
+        'motivations_details': "Détails des motivations",
+        'motivations_graphique': "Principales motivations pour faire un MBA",
+        'motivations_pourcentage': "Pourcentage de candidats (%)",
+        'carrieres': "Progression\nde carrière", 
+        'salaires': "Augmentation\nsalariale",
+        'reseaux': "Réseau\nprofessionnel", 
+        'competences': "Compétences\nmanagériales",
+        'secteur': "Changement\nde secteur", 
+        'entrepreneuriat': "Entrepreneuriat",
+        'motivation_carriere': "Progression de carrière",
+        'motivation_salaire': "Augmentation salariale",
+        'motivation_reseau': "Réseau professionnel",
+        'motivation_competence': "Compétences managériales",
+        'motivation_secteur': "Changement de secteur",
+        'motivation_entrepreneuriat': "Entrepreneuriat",
+        'developpement_professionnel': "Développement Professionnel",
+        'opportunites_financieres': "Opportunités Financières",
+        'reseau_global': "Réseau Global",
+        'reconversion': "Reconversion Professionnelle",
         
         # Technologie
         'tech_impact_titre': "Impact de la Technologie sur les MBA",
@@ -263,7 +321,64 @@ translations = {
         'tab_motivations': "Candidate Motivations",
         'tab_tendances': "Global Trends",
         'tab_simulateur': "Ranking Simulator",
+        'tab_ia_techno': "AI & Technology",
         'tab_references': "References & Explanations",
+        
+        # Motivations des candidats - textes pour l'onglet en anglais
+        'motivations_titre': "Main MBA Candidate Motivations",
+        'motivations_intro': "Discover why students worldwide choose to pursue an MBA. Data shows that motivations vary but focus around a few key themes.",
+        'motivations_details': "Motivation Details",
+        'motivations_graphique': "Main motivations for pursuing an MBA",
+        'motivations_pourcentage': "Percentage of candidates (%)",
+        'carrieres': "Career\nAdvancement", 
+        'salaires': "Salary\nIncrease",
+        'reseaux': "Professional\nNetwork", 
+        'competences': "Management\nSkills",
+        'secteur': "Industry\nChange", 
+        'entrepreneuriat': "Entrepreneurship",
+        'motivation_carriere': "Career Advancement",
+        'motivation_salaire': "Salary Increase",
+        'motivation_reseau': "Professional Network",
+        'motivation_competence': "Management Skills",
+        'motivation_secteur': "Industry Change",
+        'motivation_entrepreneuriat': "Entrepreneurship",
+        'developpement_professionnel': "Professional Development",
+        'opportunites_financieres': "Financial Opportunities",
+        'reseau_global': "Global Network",
+        'reconversion': "Career Change",
+        
+        # AI and Technology
+        'ia_techno_titre': "Artificial Intelligence & Technology in MBA Programs",
+        'ia_techno_desc': "Analysis and decision-making tool for integrating AI and technology into MBA programs.",
+        'ia_techno_intro': "This tool allows you to analyze and visualize the impact of various technological components in MBA programs.",
+        
+        # IA and Tech Categories
+        'cat_sans_prog': "No Programming",
+        'cat_avec_prog': "With Programming",
+        'cat_ia_ml': "AI & Machine Learning",
+        'cat_deep_tech': "Deep Tech",
+        'cat_techno_gen': "General Technologies",
+        
+        # Course Types
+        'cours_common': "Core Courses",
+        'cours_electifs': "Elective Courses",
+        'cours_projets': "Projects and Workshops",
+        
+        # Category Descriptions
+        'desc_sans_prog': "Introduction to tech and AI without programming requirements (awareness, concepts, strategy).",
+        'desc_avec_prog': "Courses including code elements, algorithms or basic programming (Python, R, SQL).",
+        'desc_ia_ml': "Specialized courses in artificial intelligence, machine learning and business applications of AI.",
+        'desc_deep_tech': "Advanced courses on emerging technologies (blockchain, IoT, robotics, VR/AR).",
+        'desc_techno_gen': "General technologies applied to business (digital transformation, e-commerce, etc.).",
+        
+        # User Interface for Analysis Tool
+        'ui_ecole': "Reference School",
+        'ui_simuler': "Simulate Impact",
+        'ui_resultats': "Simulation Results",
+        'ui_benchmark': "Comparison with Top Schools",
+        'ui_recommandations': "Personalized Recommendations",
+        'ui_dosage': "Recommended Dosage (% of program)",
+        'ui_impact': "Impact on MBA Valuation",
         
         # Technology
         'tech_impact_titre': "Technology Impact on MBA Programs",
@@ -421,65 +536,68 @@ def onglet_classement_ft() -> None:
 
 def onglet_motivations_candidats() -> None:
     """Affiche le contenu de l'onglet Motivations des Candidats."""
-    st.header("Principales Motivations des Candidats MBA")
+    st.header(traduire('motivations_titre'))
 
-    st.markdown("""
-    Découvrez pourquoi les étudiants du monde entier choisissent de poursuivre un MBA.
-    Les données montrent que les motivations varient mais se concentrent autour de quelques thèmes clés.
-    """)
+    st.markdown(traduire('motivations_intro'))
 
-    # Créer le graphique des motivations
-    motivations = ['Progression\nde carrière', 'Augmentation\nsalariale',
-                  'Réseau\nprofessionnel', 'Compétences\nmanagériales',
-                  'Changement\nde secteur', 'Entrepreneuriat']
+    # Créer le graphique des motivations - utiliser les traductions
+    if st.session_state.langue == 'fr':
+        motivations = ['Progression\nde carrière', 'Augmentation\nsalariale',
+                       'Réseau\nprofessionnel', 'Compétences\nmanagériales',
+                       'Changement\nde secteur', 'Entrepreneuriat']
+    else:
+        motivations = [traduire('carrieres'), traduire('salaires'),
+                       traduire('reseaux'), traduire('competences'),
+                       traduire('secteur'), traduire('entrepreneuriat')]
+    
     percentages = [85, 70, 65, 60, 45, 30]
 
     fig = creer_graphique_barres(
         motivations,
         percentages,
         COULEUR_SECONDAIRE,
-        'Principales motivations pour faire un MBA',
-        'Pourcentage de candidats (%)'
+        traduire('motivations_graphique'),
+        traduire('motivations_pourcentage')
     )
     st.pyplot(fig)
 
     # Détails des motivations
-    st.subheader("Détails des motivations")
+    st.subheader(traduire('motivations_details'))
 
     col1, col2 = st.columns(2)
 
     with col1:
-        with st.expander("Développement Professionnel", expanded=True):
+        with st.expander(traduire('developpement_professionnel'), expanded=True):
             st.markdown("""
             • Progression vers des postes de direction
             • Acquisition de compétences stratégiques
-            • Préparation au leadership global
-            • Développement de la pensée critique
+            • Accélération de l'évolution de carrière
+            • Visibilité accrue dans l'entreprise
             """)
-
-        with st.expander("Développement Personnel", expanded=True):
+        
+        with st.expander(traduire('opportunites_financieres')):
             st.markdown("""
-            • Construction d'un réseau international
-            • Développement de la confiance en soi
-            • Exposition à de nouvelles cultures
-            • Acquisition de compétences relationnelles
+            • Salaire initial post-MBA supérieur (+50-90% en moyenne)
+            • Accès à des industries mieux rémunérées
+            • Augmentation des primes et avantages
+            • Meilleur pouvoir de négociation salariale
             """)
 
     with col2:
-        with st.expander("Changement de Carrière", expanded=True):
+        with st.expander(traduire('reseau_global')):
             st.markdown("""
-            • Transition vers un nouveau secteur
-            • Préparation à l'entrepreneuriat
-            • Accès à de nouvelles opportunités
-            • Positionnement pour les rôles internationaux
+            • Connexions avec des étudiants internationaux
+            • Réseau d'anciens élèves mondial
+            • Accès à des recruteurs internationaux
+            • Opportunités d'emploi à l'échelle mondiale
             """)
-
-        with st.expander("Retour sur Investissement", expanded=True):
+        
+        with st.expander(traduire('reconversion')):
             st.markdown("""
-            • Augmentation du potentiel de revenu
-            • Accélération de la progression de carrière
-            • Accès aux meilleures entreprises
-            • Sécurisation des postes de direction
+            • Changement de carrière vers un nouveau secteur
+            • Accès à des fonctions différentes
+            • Possibilité de créer sa propre entreprise
+            • Développement d'expertise dans un domaine spécifique
             """)
 
     # Témoignages
@@ -704,6 +822,369 @@ def onglet_simulateur_classement() -> None:
 # Application principale
 # -----------------------------------------------------------------------------
 
+def onglet_ia_et_technologie() -> None:
+    """Affiche le contenu de l'onglet Intelligence Artificielle & Technologie dans les MBA."""
+    st.header(traduire('ia_techno_titre'))
+    st.markdown(traduire('ia_techno_desc'))
+    
+    # Introduction et explication de l'outil
+    st.markdown(f"""
+    <div style="background-color: {COULEUR_FOND}; padding: 15px; border-radius: 5px; border-left: 5px solid {COULEUR_IA}; margin: 20px 0;">
+        <p>{traduire('ia_techno_intro')}</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Création de 3 colonnes principales
+    col_gauche, col_centre, col_droite = st.columns([1, 2, 1])
+    
+    # Colonne de gauche - Paramètres et configuration
+    with col_gauche:
+        st.subheader(traduire('ui_ecole'))
+        
+        # Sélection de l'école de référence
+        ecoles_references = {
+            "Wharton (Rank #1 Tech)": 42,
+            "MIT Sloan (Rank #2 Tech)": 38,
+            "Stanford GSB (Rank #3 Tech)": 32,
+            "INSEAD (Rank #4 Tech)": 28,
+            "Harvard Business School (Rank #5 Tech)": 25,
+            "London Business School (Rank #7 Tech)": 24,
+            "HEC Paris (Rank #8 Tech)": 22,
+            "IE Business School (Rank #10 Tech)": 20,
+            "IESE Business School (Rank #12 Tech)": 19,
+            "Cambridge Judge (Rank #14 Tech)": 18,
+            "Oxford Saïd (Rank #15 Tech)": 17,
+            "ESADE (Rank #18 Tech)": 16,
+            "RSM Erasmus (Rank #20 Tech)": 15
+        }
+        
+        # Sélection de l'école avec affichage du ranking
+        ecole_reference = st.selectbox(
+            "Sélectionnez un MBA de référence",
+            list(ecoles_references.keys()),
+            index=6  # HEC Paris par défaut
+        )
+        
+        # Afficher le pourcentage IA & Tech de l'école sélectionnée
+        pourcentage_ecole = ecoles_references[ecole_reference]
+        st.info(f"Cette école consacre environ **{pourcentage_ecole}%** de son curriculum à l'IA & aux technologies.")
+        
+        st.markdown("---")
+        
+        # Catégories d'IA et technologies
+        st.subheader("Catégories d'analyse")
+        st.markdown("""
+        <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 0.9em;">
+        <p><strong>Note sur la pondération :</strong> Chaque curseur représente le <strong>pourcentage du curriculum MBA</strong> 
+        que vous souhaitez consacrer à cette catégorie spécifique de contenu technologique. 
+        La somme de tous les curseurs vous donne le pourcentage total du programme dédié à l'IA et aux technologies.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown(f"**{traduire('cat_sans_prog')}**")
+        st.caption(traduire('desc_sans_prog'))
+        sans_prog = st.slider(
+            "% du curriculum",
+            min_value=0, max_value=25, value=10, step=1,
+            key="sans_prog",
+            help="Pourcentage du curriculum MBA consacré aux cours de sensibilisation à l'IA et à la tech sans programmation"
+        )
+        
+        st.markdown(f"**{traduire('cat_avec_prog')}**")
+        st.caption(traduire('desc_avec_prog'))
+        avec_prog = st.slider(
+            "% du curriculum",
+            min_value=0, max_value=25, value=5, step=1,
+            key="avec_prog",
+            help="Pourcentage du curriculum MBA consacré aux cours incluant des éléments de programmation"
+        )
+        
+        st.markdown(f"**{traduire('cat_ia_ml')}**")
+        st.caption(traduire('desc_ia_ml'))
+        ia_ml = st.slider(
+            "% du curriculum",
+            min_value=0, max_value=25, value=8, step=1,
+            key="ia_ml",
+            help="Pourcentage du curriculum MBA consacré aux cours spécialisés en IA et machine learning"
+        )
+        
+        st.markdown(f"**{traduire('cat_deep_tech')}**")
+        st.caption(traduire('desc_deep_tech'))
+        deep_tech = st.slider(
+            "% du curriculum",
+            min_value=0, max_value=25, value=3, step=1,
+            key="deep_tech",
+            help="Pourcentage du curriculum MBA consacré aux technologies émergentes avancées (blockchain, IoT, etc.)"
+        )
+        
+        st.markdown(f"**{traduire('cat_techno_gen')}**")
+        st.caption(traduire('desc_techno_gen'))
+        tech_gen = st.slider(
+            "% du curriculum",
+            min_value=0, max_value=25, value=7, step=1,
+            key="tech_gen",
+            help="Pourcentage du curriculum MBA consacré aux technologies générales appliquées au business"
+        )
+        
+        # Afficher le total
+        total_poids = sans_prog + avec_prog + ia_ml + deep_tech + tech_gen
+        st.success(f"**Total: {total_poids}%** du curriculum dédié à l'IA & tech")
+        
+        # Bouton pour simuler
+        st.markdown("---")
+        simuler = st.button(traduire('ui_simuler'))
+    
+    # Colonne centrale - Résultats et visualisations
+    with col_centre:
+        # Si le bouton simuler est cliqué
+        if simuler or 'simulation_effectuee' in st.session_state:
+            st.session_state.simulation_effectuee = True
+            st.subheader(traduire('ui_resultats'))
+            
+            # Sous-colonnes pour différentes visualisations
+            viz_col1, viz_col2 = st.columns(2)
+            
+            # Répartition par type de cours
+            with viz_col1:
+                # Calcul des répartitions
+                # Ces valeurs sont ajustées selon les pondérations entrées
+                total_poids = sans_prog + avec_prog + ia_ml + deep_tech + tech_gen
+                
+                # Répartition par type de cours (obligatoire vs électif)
+                core_pct = max(15, min(40, total_poids * 0.8 / 33 * 100))
+                electives_pct = max(30, min(70, 100 - core_pct - 10))
+                projets_pct = max(5, min(20, 100 - core_pct - electives_pct))
+                
+                # Graphique pour la répartition par type
+                types_cours = [traduire('cours_common'), 
+                              traduire('cours_electifs'), 
+                              traduire('cours_projets')]
+                valeurs_types = [core_pct, electives_pct, projets_pct]
+                couleurs_types = [COULEUR_PRINCIPALE, COULEUR_SECONDAIRE, COULEUR_TECHNO]
+                
+                fig_types = creer_graphique_camembert(
+                    categories=types_cours,
+                    valeurs=valeurs_types,
+                    couleurs=couleurs_types,
+                    titre="Répartition par type de cours"
+                )
+                st.pyplot(fig_types)
+            
+            # Graphique d'impact par catégorie de technologie
+            with viz_col2:
+                categories = [traduire('cat_sans_prog'), 
+                             traduire('cat_avec_prog'), 
+                             traduire('cat_ia_ml'),
+                             traduire('cat_deep_tech'), 
+                             traduire('cat_techno_gen')]
+                valeurs = [sans_prog, avec_prog, ia_ml, deep_tech, tech_gen]
+                
+                # Normaliser les valeurs pour l'affichage
+                total = sum(valeurs)
+                valeurs_norm = [v/total*100 for v in valeurs] if total > 0 else [0]*5
+                
+                couleurs = [COULEUR_SECONDAIRE, COULEUR_PRINCIPALE, 
+                           COULEUR_IA, COULEUR_ACCENT, COULEUR_TECHNO]
+                
+                fig_tech = creer_graphique_camembert(
+                    categories=categories,
+                    valeurs=valeurs_norm,
+                    couleurs=couleurs,
+                    titre="Répartition des technologies"
+                )
+                st.pyplot(fig_tech)
+            
+            # Graphique radar d'impact global
+            total_poids = sans_prog + avec_prog + ia_ml + deep_tech + tech_gen
+            
+            # Facteurs d'impact calculés
+            facteur_employabilite = min(95, 50 + total_poids/33*45)
+            facteur_innovation = min(95, 40 + (ia_ml*1.5 + deep_tech*2)/33*55)
+            facteur_salaire = min(95, 60 + (ia_ml + deep_tech + avec_prog)/33*35)
+            facteur_recherche = min(95, 30 + (deep_tech*2 + ia_ml)/33*65)
+            facteur_international = min(95, 70 + total_poids/33*25)
+            
+            # Graphique radar des impacts
+            categories_impact = ["Employabilité", "Innovation pédagogique", 
+                               "Impact salarial", "Recherche & publications", 
+                               "Attractivité internationale"]
+            valeurs_impact = [facteur_employabilite, facteur_innovation, 
+                            facteur_salaire, facteur_recherche, 
+                            facteur_international]
+            
+            fig_radar = creer_graphique_radar(
+                categories=categories_impact,
+                valeurs=valeurs_impact,
+                couleur=COULEUR_IA
+            )
+            st.pyplot(fig_radar)
+            
+            # Dosage global recommandé
+            st.markdown("---")
+            st.subheader(traduire('ui_dosage'))
+            
+            # Calcul du dosage recommandé
+            dosage_global = total_poids
+            dosage_progressif = min(40, dosage_global * 1.2)  # dosage progressif recommandé
+            
+            # Affichage du dosage avec jauge
+            col_dosage1, col_dosage2, col_dosage3 = st.columns([1, 2, 1])
+            with col_dosage2:
+                # Utiliser une métrique pour afficher le dosage actuel vs recommandé
+                st.metric(
+                    "Dosage IA & Technologie actuel", 
+                    f"{dosage_global:.1f}%", 
+                    f"{dosage_progressif - dosage_global:.1f}% recommandé", 
+                    delta_color="normal"
+                )
+                
+                # Ajouter une barre de progression pour visualiser
+                st.progress(dosage_global/50)  # 50% est le maximum théorique
+    
+    # Colonne de droite - Benchmarks et recommandations
+    with col_droite:
+        st.subheader(traduire('ui_benchmark'))
+        
+        # Données des meilleures écoles pour le benchmark
+        benchmark_data = {
+            "Wharton": 42,
+            "MIT Sloan": 38,
+            "Stanford GSB": 32,
+            "INSEAD": 28,
+            "HBS": 25,
+            "LBS": 24,
+            "HEC Paris": 22,
+            "CEU": 18,
+            "Moyenne Top 10": 30
+        }
+        
+        # Créer un graphique de comparaison avec une taille augmentée et une meilleure lisibilité
+        fig, ax = plt.subplots(figsize=(8, 6))
+        fig.patch.set_facecolor(COULEUR_FOND)
+        
+        # Ajouter la référence de l'utilisateur
+        total_poids = sans_prog + avec_prog + ia_ml + deep_tech + tech_gen
+        
+        # Sélectionner seulement les écoles les plus pertinentes pour la comparaison (top 5 + utilisateur + moyenne)
+        benchmark_top = {
+            "Wharton": 42,
+            "MIT Sloan": 38,
+            "Stanford GSB": 32,
+            "Moyenne Top 10": 30,
+            "Votre MBA": total_poids
+        }
+        
+        # Ajouter l'école de référence si elle n'est pas déjà dans le top
+        ecole_nom = ecole_reference.split(" (Rank")[0]
+        if ecole_nom not in benchmark_top and ecole_nom != "Votre MBA":
+            benchmark_top[ecole_nom] = ecoles_references[ecole_reference]
+            
+        # Trier les données par valeur décroissante pour meilleure lisibilité
+        benchmark_top = dict(sorted(benchmark_top.items(), key=lambda x: x[1], reverse=True))
+        
+        # Couleurs pour le graphique
+        colors = [COULEUR_IA if school == "Votre MBA" else 
+                 COULEUR_ACCENT if school == ecole_nom and ecole_nom != "Votre MBA" else
+                 COULEUR_SECONDAIRE if school == "Moyenne Top 10" else 
+                 COULEUR_PRINCIPALE for school in benchmark_top.keys()]
+        
+        # Créer le graphique avec des dimensions améliorées
+        bars = ax.barh(list(benchmark_top.keys()), list(benchmark_top.values()), color=colors, height=0.6)
+        
+        # Ajouter les valeurs à côté des barres avec une taille de police plus grande
+        for i, bar in enumerate(bars):
+            width = bar.get_width()
+            ax.text(width + 1, bar.get_y() + bar.get_height()/2, 
+                   f"{width:.1f}%", ha='left', va='center', fontweight='bold', fontsize=12)
+        
+        # Configurer le graphique avec une meilleure lisibilité
+        ax.set_xlabel("% du curriculum dédié à l'IA & Tech", fontsize=12, fontweight='bold')
+        ax.set_xlim(0, 50)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.tick_params(axis='both', which='major', labelsize=12)
+        
+        # Titre plus visible
+        ax.set_title("Comparaison avec les meilleures écoles", fontsize=14, fontweight='bold', pad=20)
+        
+        # Afficher le graphique avec plus d'espace
+        fig.tight_layout()
+        st.pyplot(fig)
+        
+        # Recommandations personnalisées
+        st.markdown("---")
+        st.subheader(traduire('ui_recommandations'))
+        
+        total_poids = sans_prog + avec_prog + ia_ml + deep_tech + tech_gen
+        
+        if total_poids < 15:
+            st.markdown(f"""
+            <div style="background-color: {COULEUR_FOND}; padding: 15px; border-radius: 5px; border-left: 5px solid {COULEUR_IA};">            
+            <p>Votre dosage actuel est <strong>en dessous</strong> des standards 2025 des MBA internationaux. 
+            Nous recommandons d'augmenter significativement votre composante IA et technologie pour rester compétitif.</p>
+            
+            <ul>
+                <li>Ajoutez un cours obligatoire de base sur l'IA</li>
+                <li>Introduisez 2-3 électifs tech sans prérequis de programmation</li>
+                <li>Développez un module d'initiation aux données</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
+        elif total_poids < 25:
+            st.markdown(f"""
+            <div style="background-color: {COULEUR_FOND}; padding: 15px; border-radius: 5px; border-left: 5px solid {COULEUR_IA};">            
+            <p>Votre dosage actuel est <strong>dans la moyenne basse</strong> des MBA internationaux. 
+            Des ajustements modérés rendraient votre programme plus attractif.</p>
+            
+            <ul>
+                <li>Renforcez les modules d'IA et ML dans le tronc commun</li>
+                <li>Ajoutez un électif spécialisé en IA</li>
+                <li>Considérez un partenariat avec une entreprise tech</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
+        elif total_poids < 35:
+            st.markdown(f"""
+            <div style="background-color: {COULEUR_FOND}; padding: 15px; border-radius: 5px; border-left: 5px solid {COULEUR_IA};">            
+            <p>Votre dosage est <strong>compétitif</strong> et proche de la moyenne des top MBA. 
+            Quelques optimisations amélioreraient encore votre proposition de valeur.</p>
+            
+            <ul>
+                <li>Développez une spécialisation IA complète</li>
+                <li>Intégrez des projets d'application réels avec des entreprises tech</li>
+                <li>Renforcez la composante Deep Tech pour plus d'innovation</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.markdown(f"""
+            <div style="background-color: {COULEUR_FOND}; padding: 15px; border-radius: 5px; border-left: 5px solid {COULEUR_IA};">            
+            <p>Votre dosage est <strong>excellent</strong> et comparable aux meilleurs MBA tech mondiaux. 
+            Maintenez cet avantage compétitif.</p>
+            
+            <ul>
+                <li>Assurez-vous de l'équilibre entre théorie et pratique</li>
+                <li>Mesurez régulièrement le ROI pour vos diplômés</li>
+                <li>Communiquez fortement sur votre avantage compétitif</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
+
+        # Impact sur la valorisation du MBA
+        st.markdown("---")
+        st.subheader(traduire('ui_impact'))
+        
+        # Calcul de l'impact financier
+        impact_rank = max(0, min(15, (total_poids - 15) / 2))
+        impact_salary = max(0, min(25, total_poids * 0.7))
+        
+        st.markdown(f"""
+        <div style="font-size: 0.9rem;">
+        <p>Amélioration potentielle du classement FT: <strong>+{impact_rank:.0f} places</strong></p>
+        <p>Impact salarial estimé à 3 ans: <strong>+{impact_salary:.1f}%</strong></p>
+        </div>
+        """, unsafe_allow_html=True)
+
 def onglet_references() -> None:
     """Affiche le contenu de l'onglet Références & Explications."""
     st.header(traduire('tech_impact_titre'))
@@ -711,33 +1192,41 @@ def onglet_references() -> None:
     
     st.subheader(traduire('tech_tendances'))
     
+    # Textes des détails technologiques à afficher (corrigés pour éviter les problèmes de formattage)
+    tech_detail_1 = traduire('tech_detail_1')
+    tech_detail_2 = traduire('tech_detail_2')
+    tech_detail_3 = traduire('tech_detail_3')
+    tech_detail_4 = traduire('tech_detail_4')
+    
     # Afficher l'information sur l'impact de la technologie avec un style distinctif
     st.markdown(f"""
     <div style="background-color: {COULEUR_FOND}; padding: 20px; border-radius: 5px; border-left: 5px solid {COULEUR_TECHNO}; margin-bottom: 20px;">
         <h3 style="color: {COULEUR_TECHNO}; margin-top: 0;">{traduire('tech_curriculum')}</h3>
-        <p>{traduire('tech_detail_1')}</p>
+        <p>{tech_detail_1}</p>
         
         <h3 style="color: {COULEUR_TECHNO}; margin-top: 15px;">{traduire('tech_specialisation')}</h3>
-        <p>{traduire('tech_detail_2')}</p>
+        <p>{tech_detail_2}</p>
         
         <h3 style="color: {COULEUR_TECHNO}; margin-top: 15px;">{traduire('tech_competences')}</h3>
-        <p>{traduire('tech_detail_3')}</p>
+        <p>{tech_detail_3}</p>
         
         <h3 style="color: {COULEUR_TECHNO}; margin-top: 15px;">{traduire('tech_carriere')}</h3>
-        <p>{traduire('tech_detail_4')}</p>
+        <p>{tech_detail_4}</p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Références des sources d'information
+    # Références des sources d'information (rendues cliquables)
     st.subheader("Sources")
-    st.markdown("""
-    - Financial Times Global MBA Ranking 2025 
-    - Wharton School of Business: New MBA Major in Artificial Intelligence for Business (Avril 2025)
-    - Harvard Business School: Technology Integration Report (2025)
-    - INSEAD: Digital Transformation in Business Education (2025)
-    - HEC Paris: Programme MBA Tech & Digital (2025)
-    - London Business School: Future of Business Education Survey (2025)
-    """)
+    st.markdown(f"""
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li style="margin-bottom: 8px;">• <a href="https://rankings.ft.com/rankings/2866/mba-2025" target="_blank">Financial Times Global MBA Ranking 2025</a></li>
+        <li style="margin-bottom: 8px;">• <a href="https://www.wharton.upenn.edu/mba-artificial-intelligence" target="_blank">Wharton School of Business: New MBA Major in Artificial Intelligence for Business (Avril 2025)</a></li>
+        <li style="margin-bottom: 8px;">• <a href="https://www.hbs.edu/tech-integration" target="_blank">Harvard Business School: Technology Integration Report (2025)</a></li>
+        <li style="margin-bottom: 8px;">• <a href="https://www.insead.edu/digital-transformation" target="_blank">INSEAD: Digital Transformation in Business Education (2025)</a></li>
+        <li style="margin-bottom: 8px;">• <a href="https://www.hec.edu/fr/grande-ecole/programme-mba-tech-digital" target="_blank">HEC Paris: Programme MBA Tech & Digital (2025)</a></li>
+        <li style="margin-bottom: 8px;">• <a href="https://www.london.edu/future-of-business-education" target="_blank">London Business School: Future of Business Education Survey (2025)</a></li>
+    </ul>
+    """, unsafe_allow_html=True)
     
     # Méthodologie
     st.subheader("Méthodologie")
@@ -758,11 +1247,12 @@ def main() -> None:
     afficher_entete()
 
     # Créer les onglets avec traduction des noms
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
         traduire('tab_classement'),
         traduire('tab_motivations'),
         traduire('tab_tendances'),
         traduire('tab_simulateur'),
+        traduire('tab_ia_techno'),
         traduire('tab_references')
     ])
 
@@ -780,6 +1270,9 @@ def main() -> None:
         onglet_simulateur_classement()
         
     with tab5:
+        onglet_ia_et_technologie()
+        
+    with tab6:
         onglet_references()
 
     # Afficher le pied de page
